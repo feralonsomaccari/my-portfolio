@@ -26,13 +26,18 @@ const generateSidePorject = repository => {
     const project_github = document.createElement("a");
 
     if (repository.homepage != null) {
+      console.log(project_demo.attributes);
       project_demo.innerHTML = "Live Demo";
       project_demo.href = repository.homepage;
       project_demo.classList.add("link");
+      project_demo.target = "_blank";
+      project_demo.rel = "noopener noreferrer";
       project_nav.append(project_demo);
     }
-    project_github.classList.add("link");
     project.classList.add("project");
+    project_github.classList.add("link");
+    project_github.target = "_blank";
+    project_github.rel = "noopener noreferrer";
     project_github.innerHTML = "Github";
     project_github.href = repository.html_url;
     project_nav.append(project_github);

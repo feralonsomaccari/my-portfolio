@@ -133,7 +133,7 @@ main {
   background-color: var(--main-color);
   top: 1.2rem;
   left: 0;
-  transition: all 0.2s;
+  transition: all 0.1s;
 }
 .link:hover::after {
   width: 100%;

@@ -15,6 +15,7 @@ body {
   color: black;
   margin: 0;
   transition: all 0.5s;
+  scroll-behavior: smooth;
 }
 .body--dark {
   background-color: rgb(25, 25, 25);
@@ -23,7 +24,7 @@ body {
 
 .wrapper {
   display: grid;
-  grid-template-rows: 14rem auto 5rem;
+  grid-template-rows: 15rem auto 5rem;
   grid-template-areas:
     "header"
     "main"
@@ -32,10 +33,16 @@ body {
 
 header {
   grid-area: header;
+  /* background-color: #f0eff1;
+background-image: url("data:image/svg+xml,%3Csvg width='84' height='48' viewBox='0 0 84 48' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0h12v6H0V0zm28 8h12v6H28V8zm14-8h12v6H42V0zm14 0h12v6H56V0zm0 8h12v6H56V8zM42 8h12v6H42V8zm0 16h12v6H42v-6zm14-8h12v6H56v-6zm14 0h12v6H70v-6zm0-16h12v6H70V0zM28 32h12v6H28v-6zM14 16h12v6H14v-6zM0 24h12v6H0v-6zm0 8h12v6H0v-6zm14 0h12v6H14v-6zm14 8h12v6H28v-6zm-14 0h12v6H14v-6zm28 0h12v6H42v-6zm14-8h12v6H56v-6zm0-8h12v6H56v-6zm14 8h12v6H70v-6zm0 8h12v6H70v-6zM14 24h12v6H14v-6zm14-8h12v6H28v-6zM14 8h12v6H14V8zM0 8h12v6H0V8z' fill='%23ffffff' fill-opacity='0.4' fill-rule='evenodd'/%3E%3C/svg%3E"); */
+}
+.header--dark {
+  /* background-color: #121212;
+  background-image: url("data:image/svg+xml,%3Csvg width='84' height='48' viewBox='0 0 84 48' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0h12v6H0V0zm28 8h12v6H28V8zm14-8h12v6H42V0zm14 0h12v6H56V0zm0 8h12v6H56V8zM42 8h12v6H42V8zm0 16h12v6H42v-6zm14-8h12v6H56v-6zm14 0h12v6H70v-6zm0-16h12v6H70V0zM28 32h12v6H28v-6zM14 16h12v6H14v-6zM0 24h12v6H0v-6zm0 8h12v6H0v-6zm14 0h12v6H14v-6zm14 8h12v6H28v-6zm-14 0h12v6H14v-6zm28 0h12v6H42v-6zm14-8h12v6H56v-6zm0-8h12v6H56v-6zm14 8h12v6H70v-6zm0 8h12v6H70v-6zM14 24h12v6H14v-6zm14-8h12v6H28v-6zM14 8h12v6H14V8zM0 8h12v6H0V8z' fill='%23010101' fill-opacity='0.4' fill-rule='evenodd'/%3E%3C/svg%3E"); */
 }
 
 .header__wrapper {
-  position: relative;
+  /* position: relative; */
   height: 100%;
   display: flex;
   flex-wrap: wrap;
@@ -83,7 +90,7 @@ header {
   text-align: center;
   background-color: var(--main-color);
 }
-.bandage--blue{
+.bandage--blue {
   background-color: rgb(108, 108, 255);
 }
 .change-theme {
@@ -109,12 +116,34 @@ main {
   grid-area: main;
 }
 
+.section__content {
+  margin: 0 auto;
+  max-width: 40rem;
+}
 .link {
-  text-decoration: underline dotted;
+  position: relative;
+  /* text-decoration: underline dotted; */
+  text-decoration: none;
   color: var(--main-color);
 }
+.link::after {
+  content: "";
+  width: 0%;
+  height: 0.1rem;
+  position: absolute;
+  background-color: var(--main-color);
+  top: 1.2rem;
+  left: 0;
+  transition: all 0.2s;
+}
+
+.link:hover::after {
+  width: 100%;
+}
+
 .section {
   padding: 2rem;
+  margin-top: 1rem;
 }
 .section__title {
   margin: 0;
@@ -123,18 +152,25 @@ main {
 .hi {
   text-align: left;
   font-size: 1.5em;
+  margin-top: 2rem;
 }
 .hi__title {
   color: var(--text-color);
   font-weight: lighter;
+  margin: 0;
 }
 .hi__subtitle {
   font-size: 0.7em;
   font-weight: lighter;
+  margin: 0;
+  margin-top: 1rem;
 }
 
 .job {
-  margin: 3rem 0;
+  margin: 1.4rem 0 3rem 0;
+}
+.job:last-child {
+  margin-bottom: 0;
 }
 .job p {
   opacity: 0.666;
@@ -152,6 +188,9 @@ main {
   color: inherit;
 }
 
+.project{
+  margin-top: 2rem;
+}
 .project h5 {
   margin-bottom: 0rem;
 }
@@ -160,21 +199,20 @@ main {
   opacity: 0.666;
 }
 .project nav {
-  margin-bottom: 0.5rem;
-}
-.project nav > a {
-  /* color: var(--text-color); */
-  color:var(--main-color);
+  margin: 0.5rem 0 1rem 0;
 }
 .project nav > :nth-child(2) {
-  margin: 0 .5rem;
+  margin: 0 0.5rem;
 }
 
 footer {
   grid-area: footer;
-  font-size: .9em;
+  font-size: 0.9em;
   color: var(--text-color);
   padding: 2rem;
+}
+.main-nav__footer {
+  margin: 1rem 0 2rem 0;
 }
 
 .ball__container {
@@ -182,7 +220,7 @@ footer {
   top: 0;
   left: 0;
   width: 100%;
-  height: 100%;
+  height: 15rem;
   overflow: hidden;
 }
 .ball {
@@ -259,3 +297,31 @@ footer {
     transform: translateY(432px);
   }
 }
+
+@media (min-width: 41rem) {
+  .header__wrapper {
+    justify-content: space-between;
+  }
+  .header__image-wrapper {
+    justify-content: flex-start;
+  }
+  .header__title {
+    text-align: left;
+  }
+  .main-nav {
+    justify-content: flex-start;
+  }
+  .main-nav__link:not(:first-child) {
+    margin-left: 1rem;
+  }
+  .footer__wrapper {
+    max-width: 40rem;
+    margin: 0 auto;
+  }
+}
+/* @media (min-width: 45rem) {
+  .header__wrapper {
+    padding-left: 0;
+    padding-right: 0;
+  } 
+/* } */

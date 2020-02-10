@@ -5,75 +5,103 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <meta name="description" content="Fer Alonso Maccari FullStack Developer - Javascript ES6 | React.js | Node.js | SQL" />
-    <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
+      
+    <link rel="icon" type="image/png" href="src/mate.png"/>
+    <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="main.css" />
     <title>Portfolio - FullStack Developer | Fer Alonso Maccari</title>
   </head>
   <body class="wrapper">
     <header>
-      <div class="header__wrapper">
-      
-        <div class="header__image-wrapper">
-          <div class="header__image-container">
-            <img class="header__image-picture" src="src/myself-face.png" alt="" />
+      <div class="section">
+        <div class="section__content header__wrapper">
+          <div class="header__image-wrapper">
+            <div class="header__image-container">
+              <img class="header__image-picture" src="src/myself-face.png" alt="" />
+            </div>
+            <h1 class="header__title ">Fer Alonso Maccari</h1>
+            <div class="bandage">FullStack Developer</div>
+            <span class="change-theme">🌛</span>
           </div>
-          <h1 class="header__title ">Fer Alonso Maccari</h1> 
-          <span class="change-theme">🌛</span>
-          <div class="bandage">FullStack Developer </div> 
-        </div>
-        <div class="main-nav">
-          <a id="change_theme" class="main-nav__link" href="">Resume</a>
-          <a class="main-nav__link" href="">Projects</a>
-          <a class="main-nav__link" href="">Github</a>
-          <a class="main-nav__link" href="">LinkedIn</a>
-        </div>
-        <div class="ball__container">
+          <div class="main-nav">
+            <a class="link main-nav__link" href="#resume">Resume</a>
+            <a class="link main-nav__link" href="#projects">Projects</a>
+            <a class="link main-nav__link" href="https://github.com/feralonsomaccari">Github</a>
+            <a class="link main-nav__link" href="https://www.linkedin.com/in/feralonsomaccari/">LinkedIn</a>
+          </div>
+          <div class="ball__container">
             <div class="ball ball--fast"></div>
             <div class="ball ball--slow"></div>
             <div class="ball ball--medium"></div>
           </div>
+        </div>
       </div>
     </header>
 
     <main>
+      <section class="section hi">
+        <div class="section__content">
+          <h3 class="hi__title">Hello! I'm Fer a Web Developer from Rosario, Argentina.</h3>
+          <h4 class="hi__subtitle">Currently Working at <a class="link" href="https://www.unr.edu.ar/">UNR (Universidad Nacional de Rosario)</a></h4>
+        </div>
+      </section>
 
-        <section class="section hi">
-            <h3 class="hi__title">Hello! I'm Fer a Web Developer from Rosario, Argentina.</h3>
-            <h4 class="hi__subtitle">Currently Working at <a class="link" href="">UNR (Universidad Nacional de Rosario)</a></h4>
-        </section>
+      <section class="section resume" id="resume">
+        <div class="section__content resume__wrapper">
+          <h3 class="section__title">RESUME</h3>
+          <article class="job">
+            <!-- <div class="bandage bandage--blue">Working Here</div> -->
+            <h5 class="job__title">FullStack Developer</h5>
+            <h5 class="job__place"><a href="https://www.unr.edu.ar/">UNR</a></h5>
+            <p>Complete Remake of old dekstop programs wrote in fox to modern Web Apps using Javascript, Laravel and PostgreSQL.</p>
+            <p>
+              Wrote many web apps to help the process of salary settlement of the employees of the university with Javascript, Laravel and PostgreSQL.
+            </p>
+            <small>Jan 2019</small>
+          </article>
+          <article class="job">
+            <h5 class="job__title">FullStack Developer</h5>
+            <h5 class="job__place"><a href="http://endata.com.ar/">Endata</a></h5>
+            <p>
+              Developed a web platform for Vehicle monitoring using Javascript, Laravel and SQL Server.
+            </p>
+            <p>
+              Integrated API's such like Google Maps, Asterisk, etc
+            </p>
+            <p>
+              Set up, maintenance and support of SQL Server and MySQL databases;
+            </p>
+            <p>
+              Set up, maintenance and support of Ubuntu Server and Windows Server;
+            </p>
+            <small>Sept 2016 - Jan 2019 (2 years, 5 months)</small>
+          </article>
+        </div>
+      </section>
 
-        <section class="section resume">
-            <div class="resume__wrapper">
-                <h3 class="section__title">RESUME</h3>
-                <article class="job">
-                    <div class="bandage bandage--blue">Working Here </div> 
-                    <h5 class="job__title">Software Developer</h5> 
-                    <h5 class="job__place"><a href="">UNR</a> </h5>
-                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Recusandae, fuga?</p>
-                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Recusandae, fuga?</p>
-                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Recusandae, fuga?</p>
-                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Recusandae, fuga?</p>
-                </article>
-                <article class="job">
-                    <h5 class="job__title">Software Developer</h5> 
-                    <h5 class="job__place"><a href="">Endata</a> </h5>
-                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Recusandae, fuga?</p>
-                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Recusandae, fuga?</p>
-                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Recusandae, fuga?</p>
-                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Recusandae, fuga?</p>
-                </article>
-            </div>
-        </section>
-
-        <section class="section projects">
-            <h3 class="section__title">SIDE PROJECTS</h3>
-            <div class="projects__wrapper">
-                <!-- Projects are auto generated by fetchin the Github API -->
-            </div>
-        </section>
+      <section class="section projects" id="projects">
+        <div class="section__content">
+          <h3 class="section__title">SIDE PROJECTS</h3>
+          <div class="projects__wrapper">
+            <!-- Projects are auto generated by fetchin the Github API -->
+          </div>
+        </div>
+      </section>
     </main>
 
-    <footer><hr> © 2020 Fer Alonso Maccari Portfolio</footer>
+    <footer>
+      <div class="footer__wrapper">
+        <hr />
+        <span>© 2020 Fer Alonso Maccari Portfolio</span>
+
+        <div class="main-nav main-nav__footer">
+          <a class="link main-nav__link" href="#resume">Resume</a>
+          <a class="link main-nav__link" href="#projects">Projects</a>
+          <a class="link main-nav__link" href="https://github.com/feralonsomaccari">Github</a>
+          <a class="link main-nav__link" href="https://www.linkedin.com/in/feralonsomaccari/">LinkedIn</a>
+        </div>
+      </div>
+    </footer>
 
     <script src="main.js"></script>
   </body>

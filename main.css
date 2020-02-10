@@ -24,7 +24,7 @@ body {
 
 .wrapper {
   display: grid;
-  grid-template-rows: 15rem auto 5rem;
+  grid-template-rows: 15rem fit-content(100%) 5rem;
   grid-template-areas:
     "header"
     "main"
@@ -55,7 +55,7 @@ background-image: url("data:image/svg+xml,%3Csvg width='84' height='48' viewBox=
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
   z-index: 2;
 }
 
@@ -122,7 +122,6 @@ main {
 }
 .link {
   position: relative;
-  /* text-decoration: underline dotted; */
   text-decoration: none;
   color: var(--main-color);
 }
@@ -136,9 +135,11 @@ main {
   left: 0;
   transition: all 0.2s;
 }
-
 .link:hover::after {
   width: 100%;
+}
+.link--resume::after{
+  top:1rem;
 }
 
 .section {
@@ -188,7 +189,7 @@ main {
   color: inherit;
 }
 
-.project{
+.project {
   margin-top: 2rem;
 }
 .project h5 {
@@ -205,6 +206,27 @@ main {
   margin: 0 0.5rem;
 }
 
+.fun {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.fun__mate {
+  height: 5rem;
+  width: 5rem;
+  cursor: pointer;
+  transition: all 0.2s;
+  margin: 1rem 0;
+}
+.fun__mate:focus {
+  outline: none;
+  background: none;
+}
+.fun__mate:hover {
+  transform: rotateZ(35deg) translateX(1rem) translateY(-3rem);
+}
+
 footer {
   grid-area: footer;
   font-size: 0.9em;
@@ -213,6 +235,10 @@ footer {
 }
 .main-nav__footer {
   margin: 1rem 0 2rem 0;
+  display:block;
+}
+.main-nav__footer .main-nav__link:not(:first-child) {
+  margin-left: 1rem;
 }
 
 .ball__container {
@@ -298,7 +324,7 @@ footer {
   }
 }
 
-@media (min-width: 41rem) {
+@media (min-width: 40rem) {
   .header__wrapper {
     justify-content: space-between;
   }
@@ -319,9 +345,3 @@ footer {
     margin: 0 auto;
   }
 }
-/* @media (min-width: 45rem) {
-  .header__wrapper {
-    padding-left: 0;
-    padding-right: 0;
-  } 
-/* } */

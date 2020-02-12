@@ -141,6 +141,7 @@ main {
 .resume__download-container{
   display:flex;
   flex-direction: column;
+  margin-top: 0.5rem;
 }
 .link--resume::after{
   top:1rem;

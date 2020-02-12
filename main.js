@@ -26,7 +26,6 @@ const generateSidePorject = repository => {
     const project_github = document.createElement("a");
 
     if (repository.homepage != null) {
-      console.log(project_demo.attributes);
       project_demo.innerHTML = "Live Demo";
       project_demo.href = repository.homepage;
       project_demo.classList.add("link");
@@ -58,7 +57,6 @@ const getRepositories = () => {
       myJson.map(repository => generateSidePorject(repository));
     })
     .catch(error => {
-      console.log(error);
     });
 };
 getRepositories();

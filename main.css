@@ -138,6 +138,10 @@ main {
 .link:hover::after {
   width: 100%;
 }
+.resume__download-container{
+  display:flex;
+  flex-direction: column;
+}
 .link--resume::after{
   top:1rem;
 }

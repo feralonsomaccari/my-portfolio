@@ -57,6 +57,7 @@ const getRepositories = () => {
       myJson.map(repository => generateSidePorject(repository));
     })
     .catch(error => {
+      // In case it fail it will show a hand wrote side project section that can be outdated
     });
 };
 getRepositories();

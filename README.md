@@ -4,7 +4,7 @@ My portfolio web to show a little bit about me.
 This portfolio has been made without any frameworks o library. just pure JS, CSS and HTML.
 
 Content:
-- Experience
+- Work experience
 - Downloadable resume (two version English and Spanish)
 - Automated Side Projects section (with github API)
 - My Links (Linkedin, githibub)

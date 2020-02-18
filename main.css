@@ -221,7 +221,7 @@ main {
   height: 5rem;
   width: 5rem;
   cursor: pointer;
-  transition: all 0.2s;
+  transition: all 0.2s ease;
   margin: 1rem 0;
 }
 .fun__mate:focus {

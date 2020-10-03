@@ -24,6 +24,7 @@ const generateSidePorject = repository => {
     const project_nav = document.createElement("nav");
     const project_demo = document.createElement("a");
     const project_github = document.createElement("a");
+    const project_lang = document.createElement("p");
 
     if (repository.homepage != null) {
       project_demo.innerHTML = "Live Demo";
@@ -42,9 +43,11 @@ const generateSidePorject = repository => {
     project_nav.append(project_github);
     project_title.innerHTML = repository.name;
     project_desc.innerHTML = repository.description;
+    project_lang.innerHTML = repository.language;
     project.append(project_title);
     project.append(project_nav);
     project.append(project_desc);
+    project.append(project_lang);
     wrapper.append(project);
   }
 };
@@ -54,6 +57,7 @@ const getRepositories = () => {
       return response.json();
     })
     .then(myJson => {
+      console.log(myJson);
       myJson.map(repository => generateSidePorject(repository));
     })
     .catch(error => {

@@ -24,7 +24,7 @@ body {
 
 .wrapper {
   display: grid;
-  grid-template-rows: 15rem fit-content(100%) 5rem;
+  grid-template-rows: 15rem fit-content(50px auto) 5rem;
   grid-template-areas:
     "header"
     "main"

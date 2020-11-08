@@ -57,7 +57,6 @@ const getRepositories = () => {
       return response.json();
     })
     .then(myJson => {
-      console.log(myJson);
       myJson.map(repository => generateSidePorject(repository));
     })
     .catch(error => {

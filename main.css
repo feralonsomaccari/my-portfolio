@@ -160,6 +160,7 @@ main {
   text-align: left;
   font-size: 1.5em;
   margin-top: 2rem;
+  margin-bottom: 2rem;
 }
 .hi__title {
   color: var(--text-color);
@@ -256,88 +257,156 @@ footer {
   z-index: 9;
 }
 
-.ball__container {
+.lamp{
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
-  height: 15rem;
+  height: 100%;
   overflow: hidden;
-}
-.ball {
-  width: 270px;
-  height: 270px;
-  position: absolute;
-  top: calc(50% - 135px);
-  left: calc(50% - 135px);
-}
-.ball:before {
-  content: "";
-  width: 5rem;
-  height: 5rem;
-  border-radius: 100%;
-  background: var(--main-color);
-  opacity: 0.5;
-  /* background: rgba(120, 197, 120, 0.5); */
-  position: absolute;
-  top: 0;
-  left: 0;
-}
-.ball--fast {
-  transform: translate(-297px);
-  animation: move-x-side 1s infinite alternate ease-in-out;
-}
-.ball--fast:before {
-  animation: move-y-side 2s infinite 0.1s alternate ease-in-out;
+  opacity: 0.1;
 }
 
-.ball--slow {
-  animation: move-x 5s infinite alternate ease-in-out;
-}
-.ball--slow:before {
-  animation: move-y 2.5s infinite 0.5s alternate ease-in-out;
-}
-.ball--medium {
-  transform: translate(297px, 351px);
-  animation: move-x-side 3s infinite alternate ease;
-}
-.ball--medium:before {
-  animation: move-y-side 2.5s infinite 0.4s alternate ease-in-out;
+.lava{
+  position:absolute;
+  height:100%;
+  width:100%;
+  top:0;
+  left:0;
+  height: 15rem;
 }
 
-@keyframes move-x-side {
-  0% {
-    transform: translateX(-162px);
-  }
-  100% {
-    transform: translate(162px);
-  }
+.blob{
+  border-radius: 50%;
+  background: #fff;
+  position:absolute;
 }
-@keyframes move-x {
-  0% {
-    transform: translateX(-432px);
+
+.blob:nth-child(1){
+  width: 200px;
+  height: 200px;
+  left: 35%;
+  bottom:-15%;
+  animation: wobble 4s ease-in-out alternate infinite, blob-one ease-in-out 13s infinite;
+}
+.blob:nth-child(2){
+  width: 125px;
+  height: 125px;
+  right: 24%;
+  bottom:-65%;
+  animation: wobble 5s ease-in-out alternate infinite, blob-two ease-in-out 22s infinite;
+  
+}
+.blob:nth-child(3){
+  width: 150px;
+  height: 150px;
+  bottom:-15%;
+  left: 34%;
+  animation: wobble 6s ease-in-out alternate infinite, blob-three ease-in-out 16s infinite;
+}
+.blob:nth-child(4){
+  width: 235px;
+  height: 235px;
+  bottom:-19%;
+  left: 30%;
+  animation: wobble 7s ease-in-out alternate infinite, blob-four ease-in-out 12s infinite;
+}
+.blob:nth-child(4){
+  width: 235px;
+  height: 235px;
+  bottom:-19%;
+  left: 30%;
+  animation: wobble 8s ease-in-out alternate infinite, blob-four ease-in-out 12s infinite;
+}
+.blob:nth-child(5){
+   width: 55px;
+  height: 55px;
+  bottom:-25%;
+  left: 34%;
+  animation: wobble 9s ease-in-out alternate infinite, blob-five ease-in-out 32s infinite;
+}
+.blob:nth-child(6){
+  width: 35px;
+  height: 35px;
+  bottom:-25%;
+  right: 34%;
+  animation:wobble 10s ease-in-out alternate infinite,  blob-six ease-in-out 12s infinite;
+}
+.blob:nth-child(7){
+  width: 100px;
+  height: 100px;
+  bottom:-85%;
+  right: 40%;
+  animation: wobble 11s ease-in-out alternate infinite, blob-seven ease-in-out 32s infinite;
+}
+@keyframes blob-one{
+  0%, 100%{
+    transform: translatey(0);
   }
-  100% {
-    transform: translateX(432px);
+  50%{
+    transform: translatey(-700%);
   }
 }
 
-@keyframes move-y-side {
-  0% {
-    transform: translateY(-162px);
+@keyframes blob-two{
+  0%, 100%{
+    transform: translatey(0);
   }
-  100% {
-    transform: translateY(162px);
-  }
-}
-@keyframes move-y {
-  0% {
-    transform: translateY(-432px);
-  }
-  100% {
-    transform: translateY(432px);
+  50%{
+    transform: translatey(-420%);
   }
 }
+@keyframes blob-three{
+  0%, 100%{
+    transform: translatey(0);
+  }
+  50%{
+    transform: translatey(-305%);
+  }
+}
+@keyframes blob-four{
+  0%, 100%{
+    transform: translatey(0);
+  }
+  50%{
+    transform: translatey(-605%);
+  }
+}
+@keyframes blob-five{
+  0%, 100%{
+    transform: translatey(0);
+  }
+  50%{
+     transform: translatey(-700%);
+  }
+}
+@keyframes blob-six{
+  0%, 100%{
+    transform: translatey(0);
+  }
+  50%{
+     transform: translatey(-700%);
+  }
+}
+@keyframes blob-seven{
+  0%, 100%{
+    transform: translatey(0);
+  }
+  50%{
+     transform: translatey(-300%);
+  }
+}
+@keyframes wobble {
+  50% {
+   border-radius: 42% 58% 70% 30% / 45% 45% 55% 55%;
+  }
+  100% {
+   border-radius: 38% 52% 75% 36% / 50% 40% 50% 60%;
+  }
+}
+
+
+
 
 @media (min-width: 40rem) {
   .header__wrapper {
@@ -363,3 +432,5 @@ footer {
     margin: 0 auto;
   }
 }
+
+

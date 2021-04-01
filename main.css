@@ -95,13 +95,15 @@ background-image: url("data:image/svg+xml,%3Csvg width='84' height='48' viewBox=
   background-color: rgb(108, 108, 255);
 }
 .change-theme {
-  background-color: red;
+  font-size: 1rem;
   background: none;
   border: none;
   cursor: pointer;
   z-index: 2;
-  padding: 0 1rem;
+  margin: 0 1rem;
+  outline: none;
 }
+
 .main-nav {
   width: 100%;
   display: flex;

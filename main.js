@@ -65,8 +65,8 @@ const getRepositories = () => {
     .then(response => {
       return response.json();
     })
-    .then(myJson => {
-      myJson.map(repository => generateSidePorject(repository));
+    .then(response => {
+      response.reverse().map(repository => generateSidePorject(repository));
     })
     .catch(error => {
       // In case it fail it will show a hand wrote side project section that can be outdated

@@ -1,6 +1,6 @@
 :root {
-  /* --main-color: rgb(79, 139, 79); */
-  --main-color: #f1b168;
+  /* --main-color: #f1b168; */
+  --main-color: #f6ac57;
   --text-color: rgb(148, 148, 148);
 }
 
@@ -12,7 +12,7 @@ html,
 body {
   height: 100%;
   font-family: "Raleway";
-  color: black;
+  color: rgb(50, 50, 50);
   margin: 0;
   transition: all 0.5s;
   scroll-behavior: smooth;
@@ -117,6 +117,13 @@ main {
   grid-area: main;
 }
 
+.text {
+  opacity: 1;
+}
+.text--dark {
+  opacity: 0.666;
+}
+
 .section__content {
   margin: 0 auto;
   max-width: 40rem;
@@ -163,7 +170,7 @@ main {
   margin-bottom: 2rem;
 }
 .hi__title {
-  color: var(--text-color);
+  /* color: var(--text-color); */
   font-weight: lighter;
   margin: 0;
 }
@@ -179,9 +186,6 @@ main {
 }
 .job:last-child {
   margin-bottom: 0;
-}
-.job p {
-  opacity: 0.666;
 }
 
 .job__title {
@@ -204,13 +208,16 @@ main {
 }
 .project p {
   margin-top: 0;
-  opacity: 0.666;
 }
 .project nav {
   margin: 0.5rem 0 1rem 0;
 }
 .project nav > :nth-child(2) {
   margin: 0 0.5rem;
+}
+
+.aboutme{
+  line-height: 1.5rem;
 }
 
 .fun {

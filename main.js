@@ -1,17 +1,24 @@
 const changeTheme = () => {
   const body = document.querySelector(".wrapper");
   const header = document.querySelector(".header");
+  const texts = document.querySelectorAll(".text")
   const btn = document.querySelector(".change-theme");
   const bodyClasses = [...body.classList];
   if (bodyClasses.some(className => className === "body--dark")) {
     body.classList.remove("body--dark");
-    // header.classList.remove('header--dark');
     btn.innerHTML = "🌛";
   } else {
-    body.classList.add("body--dark");
-    // header.classList.add('header--dark');
+    body.classList.add("body--dark");;
     btn.innerHTML = "🌞";
   }
+
+  texts.forEach(texts => {
+    const textClasses = [...texts.classList];
+     textClasses.some(className => className === "text--dark")
+    ? texts.classList.remove("text--dark")
+    : texts.classList.add("text--dark")
+  })
+ 
 };
 
 const generateSidePorject = repository => {
@@ -43,6 +50,7 @@ const generateSidePorject = repository => {
     project_nav.append(project_github);
     project_title.innerHTML = repository.name;
     project_desc.innerHTML = repository.description;
+    project_desc.classList.add("text")
     project_lang.innerHTML = repository.language;
     project.append(project_title);
     project.append(project_nav);

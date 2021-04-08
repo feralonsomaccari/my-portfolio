@@ -158,6 +158,7 @@ main {
 }
 .section__title {
   margin: 0;
+  font-size: 1.17em;
 }
 
 .hi {
@@ -170,6 +171,7 @@ main {
   /* color: var(--text-color); */
   font-weight: lighter;
   margin: 0;
+  font-size: 1.17em;
 }
 .hi__subtitle {
   font-size: 0.7em;
@@ -187,11 +189,13 @@ main {
 
 .job__title {
   margin: 0.5rem 0;
+  font-size: 1em;
 }
 .job__place {
   margin: 0;
   opacity: 0.666;
   margin-bottom: 1.5rem;
+  font-size: 0.83em;
 }
 .job__place a {
   color: inherit;

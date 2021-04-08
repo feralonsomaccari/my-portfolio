@@ -1,5 +1,5 @@
 :root {
-  --main-color: rgb(108, 108, 255);
+  --main-color: #305291;
   --text-color: rgb(148, 148, 148);
 }
 
@@ -85,7 +85,7 @@ header {
   background-color: var(--main-color);
 }
 .bandage--blue {
-  background-color: rgb(108, 108, 255);
+  background-color: var(--main-color);
 }
 .change-theme {
   font-size: 1rem;
@@ -271,7 +271,6 @@ main {
 footer {
   grid-area: footer;
   font-size: 0.9em;
-  color: var(--text-color);
   padding: 2rem;
 }
 .main-nav__footer {
@@ -285,7 +284,6 @@ footer {
   display: block;
   width: 100%;
   margin: 1rem auto;
-  color: var(--text-color);
   text-align: center;
   z-index: 9;
 }

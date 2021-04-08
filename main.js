@@ -1,6 +1,7 @@
 const changeTheme = () => {
   const body = document.querySelector(".wrapper");
   const texts = document.querySelectorAll(".text")
+  const links = document.querySelectorAll(".link")
   const emoji = document.querySelector("#emoji-theme");
   const bodyClasses = [...body.classList];
   if (bodyClasses.some(className => className === "body--dark")) {
@@ -19,6 +20,12 @@ const changeTheme = () => {
       ? texts.classList.remove("text--dark")
       : texts.classList.add("text--dark")
   })
+  links.forEach(links => {
+    const textClasses = [...links.classList];
+    textClasses.some(className => className === "link--dark")
+      ? links.classList.remove("link--dark")
+      : links.classList.add("link--dark")
+  })
 
 };
 
@@ -27,7 +34,7 @@ const generateSidePorject = repository => {
     const wrapper = document.querySelector(".projects__wrapper");
 
     const project = document.createElement("article");
-    const project_title = document.createElement("h5");
+    const project_title = document.createElement("h3");
     const project_desc = document.createElement("p");
     const project_nav = document.createElement("nav");
     const project_demo = document.createElement("a");

@@ -3,6 +3,7 @@ const changeTheme = () => {
   const texts = document.querySelectorAll(".text")
   const links = document.querySelectorAll(".link")
   const emoji = document.querySelector("#emoji-theme");
+  const LampAnimation = document.querySelector(".lamp");
   const bodyClasses = [...body.classList];
   if (bodyClasses.some(className => className === "body--dark")) {
     body.classList.remove("body--dark");
@@ -26,6 +27,10 @@ const changeTheme = () => {
       ? links.classList.remove("link--dark")
       : links.classList.add("link--dark")
   })
+  console.log(LampAnimation.classList);
+  [...LampAnimation.classList].some(className => className === "lamp--dark")
+    ? LampAnimation.classList.remove("lamp--dark")
+    : LampAnimation.classList.add("lamp--dark")
 
 };
 

@@ -126,7 +126,7 @@ main {
 .link {
   position: relative;
   text-decoration: none;
-  color: #305291
+  color: #305291;
 }
 .link::after {
   content: "";
@@ -200,14 +200,14 @@ main {
 .job {
   margin: 4rem 0 3rem 0;
 }
-.job:first-of-type{
+.job:first-of-type {
   margin-top: 1.5rem;
 }
 .job:last-child {
   margin-bottom: 0;
 }
 .job p {
-  margin: .5rem 0;
+  margin: 0.5rem 0;
 }
 .job__title {
   margin: 0.5rem 0;
@@ -289,6 +289,7 @@ footer {
 }
 
 .lamp {
+  display: none;
   position: absolute;
   top: 0;
   left: 0;
@@ -296,6 +297,9 @@ footer {
   height: 100%;
   overflow: hidden;
   opacity: 0.1;
+}
+.lamp--dark {
+  display: block;
 }
 
 .lava {

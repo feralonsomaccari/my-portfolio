@@ -175,6 +175,8 @@ main {
 }
 .section__title {
   margin: 0;
+  border-bottom: 1px dotted;
+  padding-bottom: 0.5rem;
   font-size: 1.17em;
 }
 

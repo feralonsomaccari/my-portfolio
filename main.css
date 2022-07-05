@@ -186,12 +186,18 @@ main {
   margin-top: 2rem;
   margin-bottom: 2rem;
 }
+
 .hi__title {
   /* color: var(--text-color); */
   font-weight: lighter;
   margin: 0;
   font-size: 1.17em;
 }
+
+.hi__title .link::after{
+  top: 2rem;
+}
+
 .hi__subtitle {
   font-size: 0.7em;
   font-weight: lighter;

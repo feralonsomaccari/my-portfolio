@@ -165,6 +165,10 @@ main {
   margin-top: 0.5rem;
 }
 
+.link--resume {
+  font-size: 1.1em;
+}
+
 .link--resume::after {
   top: 1.1rem;
   font-size: 1.1em;

@@ -93,8 +93,8 @@ header {
   border: none;
   cursor: pointer;
   z-index: 2;
-  margin: 0 1rem;
   outline: none;
+  color: blue;
 }
 
 .main-nav {

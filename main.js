@@ -1,4 +1,4 @@
-const changeTheme = () => {
+const handleThemeToggle = () => {
   const body = document.querySelector(".wrapper");
   const texts = document.querySelectorAll(".text")
   const links = document.querySelectorAll(".link")
@@ -26,15 +26,15 @@ const changeTheme = () => {
     textClasses.some(className => className === "link--dark")
       ? links.classList.remove("link--dark")
       : links.classList.add("link--dark")
-  })
-  console.log(LampAnimation.classList);
+  });
+  
   [...LampAnimation.classList].some(className => className === "lamp--dark")
     ? LampAnimation.classList.remove("lamp--dark")
     : LampAnimation.classList.add("lamp--dark")
 
 };
 
-const generateSidePorject = repository => {
+const generateSideProject = repository => {
   if (repository.fork == false) {
     const wrapper = document.querySelector(".projects__wrapper");
 
@@ -74,15 +74,14 @@ const generateSidePorject = repository => {
 };
 const getRepositories = () => {
   fetch("https://api.github.com/users/feralonsomaccari/repos")
+    .then(response => response.json())
     .then(response => {
-      return response.json();
-    })
-    .then(response => {
-      response.reverse().map(repository => generateSidePorject(repository));
+      response.reverse().map(repository => generateSideProject(repository));
     })
     .catch(error => {
+      console.error(error)
       // In case it fail it will show a hand wrote side project section that can be outdated
     });
 };
 getRepositories();
-document.querySelector(".change-theme").addEventListener("click", changeTheme);
+document.querySelector(".theme-toggle-btn").addEventListener("click", handleThemeToggle);

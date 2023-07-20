@@ -87,7 +87,7 @@ header {
 .bandage--blue {
   background-color: var(--main-color);
 }
-.change-theme {
+.theme-toggle-btn {
   font-size: 1rem;
   background: none;
   border: none;

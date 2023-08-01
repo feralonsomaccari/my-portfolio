@@ -240,11 +240,12 @@ main {
   margin-top: 2rem;
 }
 .project h3 {
-  font-size: 0.83em;
+  font-size: 1.1em;
   margin-bottom: 0rem;
 }
 .project p {
   margin-top: 0;
+  margin-bottom: 5px;
 }
 .project nav {
   margin: 0.5rem 0 1rem 0;

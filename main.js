@@ -27,7 +27,7 @@ const handleThemeToggle = () => {
       ? links.classList.remove("link--dark")
       : links.classList.add("link--dark")
   });
-  
+
   [...LampAnimation.classList].some(className => className === "lamp--dark")
     ? LampAnimation.classList.remove("lamp--dark")
     : LampAnimation.classList.add("lamp--dark")
@@ -35,48 +35,50 @@ const handleThemeToggle = () => {
 };
 
 const generateSideProject = repository => {
-  if (repository.fork == false) {
-    const wrapper = document.querySelector(".projects__wrapper");
+  if (repository.size < 500 || repository.fork) return;
+  const wrapper = document.querySelector(".projects__wrapper");
 
-    const project = document.createElement("article");
-    const project_title = document.createElement("h3");
-    const project_desc = document.createElement("p");
-    const project_nav = document.createElement("nav");
-    const project_demo = document.createElement("a");
-    const project_github = document.createElement("a");
-    const project_lang = document.createElement("p");
+  const project = document.createElement("article");
+  const project_title = document.createElement("h3");
+  const project_desc = document.createElement("p");
+  const project_nav = document.createElement("nav");
+  const project_demo = document.createElement("a");
+  const project_github = document.createElement("a");
+  const project_lang = document.createElement("p");
 
-    if (repository.homepage != null) {
-      project_demo.innerHTML = "Live Demo";
-      project_demo.href = repository.homepage;
-      project_demo.classList.add("link");
-      project_demo.target = "_blank";
-      project_demo.rel = "noopener noreferrer";
-      project_nav.append(project_demo);
-    }
-    project.classList.add("project");
-    project_github.classList.add("link");
-    project_github.target = "_blank";
-    project_github.rel = "noopener noreferrer";
-    project_github.innerHTML = "Github";
-    project_github.href = repository.html_url;
-    project_nav.append(project_github);
-    project_title.innerHTML = repository.name;
-    project_desc.innerHTML = repository.description;
-    project_desc.classList.add("text")
-    project_lang.innerHTML = repository.language;
-    project.append(project_title);
-    project.append(project_nav);
-    project.append(project_desc);
-    project.append(project_lang);
-    wrapper.append(project);
+  if (repository.homepage) {
+    project_demo.innerHTML = "Live Demo";
+    project_demo.href = repository.homepage;
+    project_demo.classList.add("link");
+    project_demo.target = "_blank";
+    project_demo.rel = "noopener noreferrer";
+    project_nav.append(project_demo);
   }
+
+  project.classList.add("project");
+  project_github.classList.add("link");
+  project_github.target = "_blank";
+  project_github.rel = "noopener noreferrer";
+  project_github.innerHTML = "Github";
+  project_github.href = repository.html_url;
+  project_nav.append(project_github);
+  project_title.innerHTML = repository.name;
+  project_desc.innerHTML = repository.description;
+  project_desc.classList.add("text")
+  project_lang.innerHTML = repository.language;
+  project.append(project_title);
+  project.append(project_nav);
+  project.append(project_desc);
+  project.append(project_lang);
+  wrapper.append(project);
 };
+
 const getRepositories = () => {
   fetch("https://api.github.com/users/feralonsomaccari/repos")
     .then(response => response.json())
     .then(response => {
-      response.reverse().map(repository => generateSideProject(repository));
+      response.sort((a, b) => a.size - b.size)
+      response.map(repository => generateSideProject(repository));
     })
     .catch(error => {
       console.error(error)

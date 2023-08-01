@@ -44,7 +44,7 @@ const generateSideProject = repository => {
   const project_nav = document.createElement("nav");
   const project_demo = document.createElement("a");
   const project_github = document.createElement("a");
-  const project_lang = document.createElement("p");
+  const project_lang = document.createElement("div");
 
   if (repository.homepage) {
     project_demo.innerHTML = "Live Demo";
@@ -65,7 +65,13 @@ const generateSideProject = repository => {
   project_title.innerHTML = repository.name;
   project_desc.innerHTML = repository.description;
   project_desc.classList.add("text")
-  project_lang.innerHTML = repository.language;
+  const topicArray = repository.topics;
+  topicArray.forEach((topic) => {
+    const topicEl = document.createElement("span");
+    topicEl.classList.add("topic")
+    topicEl.textContent = `${topic}`;
+    project_lang.append(topicEl)
+  })
   project.append(project_title);
   project.append(project_nav);
   project.append(project_desc);
@@ -77,6 +83,7 @@ const getRepositories = () => {
   fetch("https://api.github.com/users/feralonsomaccari/repos")
     .then(response => response.json())
     .then(response => {
+      console.log(response)
       response.sort((a, b) => a.size - b.size)
       response.map(repository => generateSideProject(repository));
     })

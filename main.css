@@ -248,10 +248,24 @@ main {
   margin-bottom: 5px;
 }
 .project nav {
-  margin: 0.5rem 0 1rem 0;
+  margin: 0.5rem 0 0.1rem 0;
 }
 .project nav > :nth-child(2) {
   margin: 0 0.5rem;
+}
+.project .topic:first-child {
+  margin: 0;
+  margin-right: 5px;
+}
+.project .topic {
+  font-weight: bold;
+  margin: 0 5px;
+}
+.project .topic::after {
+  content: ",";
+}
+.project .topic:last-child::after {
+  content: "";
 }
 
 .aboutme {

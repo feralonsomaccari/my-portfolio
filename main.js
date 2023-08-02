@@ -83,7 +83,6 @@ const getRepositories = () => {
   fetch("https://api.github.com/users/feralonsomaccari/repos")
     .then(response => response.json())
     .then(response => {
-      console.log(response)
       response.sort((a, b) => a.size - b.size)
       response.map(repository => generateSideProject(repository));
     })

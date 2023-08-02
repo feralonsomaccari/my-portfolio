@@ -95,6 +95,11 @@ header {
   z-index: 2;
   outline: none;
   color: blue;
+  text-decoration: underline;
+  flex-basis: 100%;
+  padding: 0;
+  text-align: center;
+  margin-top: 10px;
 }
 
 .main-nav {
@@ -496,5 +501,8 @@ footer {
   .footer__wrapper {
     max-width: 40rem;
     margin: 0 auto;
+  }
+  .theme-toggle-btn {
+    text-align: left;
   }
 }

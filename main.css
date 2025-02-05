@@ -263,6 +263,10 @@ main {
   padding: 0;
 }
 
+.job .job__badges {
+  margin-top: 16px;
+}
+
 .job__title {
   margin: 0.5rem 0;
   font-size: 1.1em;

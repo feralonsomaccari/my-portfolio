@@ -264,6 +264,9 @@ main {
 }
 
 .job .job__badges {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
   margin-top: 16px;
 }
 
@@ -300,7 +303,7 @@ main {
   margin: 0.5rem 0 0.1rem 0;
 }
 
-.project nav> :nth-child(2) {
+.project nav > :nth-child(2) {
   margin: 0 0.5rem;
 }
 
@@ -365,6 +368,7 @@ footer {
   grid-area: footer;
   font-size: 0.9em;
   padding: 2rem;
+  text-align: center;
 }
 
 .main-nav__footer {
@@ -500,7 +504,6 @@ footer {
 }
 
 @keyframes blob-one {
-
   0%,
   100% {
     transform: translatey(0);
@@ -512,7 +515,6 @@ footer {
 }
 
 @keyframes blob-two {
-
   0%,
   100% {
     transform: translatey(0);
@@ -524,7 +526,6 @@ footer {
 }
 
 @keyframes blob-three {
-
   0%,
   100% {
     transform: translatey(0);
@@ -536,7 +537,6 @@ footer {
 }
 
 @keyframes blob-four {
-
   0%,
   100% {
     transform: translatey(0);
@@ -548,7 +548,6 @@ footer {
 }
 
 @keyframes blob-five {
-
   0%,
   100% {
     transform: translatey(0);
@@ -560,7 +559,6 @@ footer {
 }
 
 @keyframes blob-six {
-
   0%,
   100% {
     transform: translatey(0);
@@ -572,7 +570,6 @@ footer {
 }
 
 @keyframes blob-seven {
-
   0%,
   100% {
     transform: translatey(0);
@@ -621,6 +618,7 @@ footer {
   .footer__wrapper {
     max-width: 40rem;
     margin: 0 auto;
+    text-align: left;
   }
 
   .theme-toggle-btn {

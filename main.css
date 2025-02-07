@@ -76,7 +76,7 @@ header {
   text-align: center;
   font-weight: 300;
   margin: 0.5rem 0;
-  margin-bottom: 0;
+  margin-bottom: 1rem;
 }
 
 .bandage {
@@ -305,7 +305,7 @@ main {
   margin: 0.5rem 0 0.1rem 0;
 }
 
-.project nav> :nth-child(2) {
+.project nav > :nth-child(2) {
   margin: 0 0.5rem;
 }
 
@@ -547,7 +547,6 @@ footer {
 }
 
 @keyframes blob-one {
-
   0%,
   100% {
     transform: translatey(0);
@@ -559,7 +558,6 @@ footer {
 }
 
 @keyframes blob-two {
-
   0%,
   100% {
     transform: translatey(0);
@@ -571,7 +569,6 @@ footer {
 }
 
 @keyframes blob-three {
-
   0%,
   100% {
     transform: translatey(0);
@@ -583,7 +580,6 @@ footer {
 }
 
 @keyframes blob-four {
-
   0%,
   100% {
     transform: translatey(0);
@@ -595,7 +591,6 @@ footer {
 }
 
 @keyframes blob-five {
-
   0%,
   100% {
     transform: translatey(0);
@@ -607,7 +602,6 @@ footer {
 }
 
 @keyframes blob-six {
-
   0%,
   100% {
     transform: translatey(0);
@@ -619,7 +613,6 @@ footer {
 }
 
 @keyframes blob-seven {
-
   0%,
   100% {
     transform: translatey(0);

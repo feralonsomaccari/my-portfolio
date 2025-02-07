@@ -66,8 +66,8 @@ header {
 .header__image-picture {
   height: 5.5rem;
   position: absolute;
-  top: -20px;
-  left: -13px;
+  top: -23px;
+  left: -12px;
 }
 
 .header__title {

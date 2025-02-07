@@ -79,6 +79,38 @@ const generateSideProject = repository => {
   wrapper.append(project);
 };
 
+
+function triggerFireworks(event) {
+  const fireworks = document.querySelector('.fireworks');
+  const numParticles = 20;
+  const colors = ['#ff0', '#ff6347', '#ff1493', '#00f', '#32cd32']; 
+
+  const { top, left, width, height } = event.target.getBoundingClientRect();
+  const centerX = left + width / 2;
+  const centerY = top + height / 2;
+
+  for (let i = 0; i < numParticles; i++) {
+    const angle = Math.random() * 360;
+    const distance = Math.random() * 100 + 50;
+    const x = Math.cos(angle) * distance;
+    const y = Math.sin(angle) * distance;
+    
+    const particle = document.createElement('div');
+    particle.classList.add('particle');
+    
+    const randomColor = colors[Math.floor(Math.random() * colors.length)];
+    particle.style.backgroundColor = randomColor;
+    
+    particle.style.left = `${centerX + window.scrollX - 3}px`;
+    particle.style.top = `${centerY + window.scrollY - 3}px`;
+    particle.style.setProperty('--x', `${x}px`);
+    particle.style.setProperty('--y', `${y}px`);
+    
+    fireworks.appendChild(particle);
+    
+    setTimeout(() => particle.remove(), 1000);
+  }
+}
 const getRepositories = () => {
   fetch("https://api.github.com/users/feralonsomaccari/repos")
     .then(response => response.json())

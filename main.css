@@ -64,10 +64,10 @@ header {
 }
 
 .header__image-picture {
-  height: 15rem;
+  height: 5.5rem;
   position: absolute;
-  top: -5.46rem;
-  left: -2.8rem;
+  top: -20px;
+  left: -13px;
 }
 
 .header__title {
@@ -645,6 +645,7 @@ footer {
     transform: scale(1) translate(0, 0);
     opacity: 1;
   }
+
   100% {
     transform: scale(1.5) translate(var(--x), var(--y));
     opacity: 0;

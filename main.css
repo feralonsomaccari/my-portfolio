@@ -1,6 +1,9 @@
 :root {
   --main-color: #305291;
+  --main-bg-color: #f6f5de;
+  --dark-bg-color: rgb(25, 25, 25);
   --text-color: rgb(148, 148, 148);
+  --link-color: #a29e5e;
 }
 
 * {
@@ -9,16 +12,16 @@
 
 html,
 body {
-  height: 100%;
-  font-family: "Raleway";
+  font-family: "proxima-nova", "HelveticaNeue", "Helvetica", "Arial", sans-serif;
   color: rgb(50, 50, 50);
   margin: 0;
   transition: all 0.5s;
   scroll-behavior: smooth;
+  background-color: var(--main-bg-color);
 }
 
 .body--dark {
-  background-color: rgb(25, 25, 25);
+  background-color: var(--dark-bg-color);
   color: #fff;
 }
 
@@ -133,6 +136,7 @@ main {
 .text {
   opacity: 1;
   line-height: 2em;
+  font-size: 120%;
 }
 
 .text--dark {
@@ -148,7 +152,7 @@ main {
   position: relative;
   opacity: 1;
   text-decoration: none;
-  color: #305291;
+  color: var(--link-color);
 }
 
 .link::after {
@@ -156,7 +160,7 @@ main {
   width: 0%;
   height: 0.1rem;
   position: absolute;
-  background-color: #305291;
+  background-color: var(--link-color);
   top: 1.2rem;
   left: 0;
   transition: all 0.1s;
@@ -253,9 +257,9 @@ main {
 
 .job .job__desc {
   margin: 0.5rem 0;
-  background-color: #f0f0f0;
   margin-top: 16px;
-  border-top: 1px solid #ccc;
+  background-color: rgba(205, 202, 162, 0.16);
+  box-shadow: 0 10px 0 -5px #dedcb9;
   padding: 8px;
 }
 
@@ -263,6 +267,7 @@ main {
   background: none;
   border: none;
   padding: 0;
+  box-shadow: none;
 }
 
 .job .job__badges {
@@ -315,7 +320,6 @@ main {
 }
 
 .project .topic {
-  font-weight: bold;
   margin: 0 5px;
 }
 

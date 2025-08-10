@@ -1,9 +1,10 @@
 :root {
   --main-color: #305291;
-  --main-bg-color: #f6f5de;
+  --main-bg-color: white;
   --dark-bg-color: rgb(25, 25, 25);
   --text-color: rgb(148, 148, 148);
-  --link-color: #a29e5e;
+  --link-color: inherit;
+  --link-color-dark: rgb(148, 148, 148);
 }
 
 * {
@@ -12,7 +13,7 @@
 
 html,
 body {
-  font-family: "proxima-nova", "HelveticaNeue", "Helvetica", "Arial", sans-serif;
+  font-family: "HelveticaNeue", "Helvetica", "Arial", sans-serif;
   color: rgb(50, 50, 50);
   margin: 0;
   transition: all 0.5s;
@@ -125,10 +126,6 @@ header {
   z-index: 1;
 }
 
-.main-nav__link {
-  text-decoration: none;
-}
-
 main {
   grid-area: main;
 }
@@ -136,55 +133,29 @@ main {
 .text {
   opacity: 1;
   line-height: 2em;
-  font-size: 120%;
 }
 
 .text--dark {
   opacity: 0.666;
 }
 
-.section__content {
-  margin: 0 auto;
-  max-width: 40rem;
-}
-
 .link {
   position: relative;
   opacity: 1;
-  text-decoration: none;
   color: var(--link-color);
-}
-
-.link::after {
-  content: "";
-  width: 0%;
-  height: 0.1rem;
-  position: absolute;
-  background-color: var(--link-color);
-  top: 1.2rem;
-  left: 0;
-  transition: all 0.1s;
+  text-decoration-style: dotted;
+  text-underline-position: under;
+  text-underline-offset: 2px;
+  text-decoration-thickness: 1px;
 }
 
 .link--dark {
   position: relative;
-  text-decoration: none;
-  color: #f1b168;
+  color: var(--link-color-dark);
 }
 
-.link--dark::after {
-  content: "";
-  width: 0%;
-  height: 0.1rem;
-  position: absolute;
-  background-color: #f1b168;
-  top: 1.2rem;
-  left: 0;
-  transition: all 0.1s;
-}
-
-.link:hover::after {
-  width: 100%;
+.link:hover {
+  text-decoration-style: solid;
 }
 
 .resume__download-container {
@@ -198,38 +169,39 @@ main {
 }
 
 .link--resume {
-  font-size: 1.1em;
+  font-size: 1em;
 }
 
 .link--resume::after {
   top: 1.1rem;
-  font-size: 1.1em;
+  font-size: 1em;
 }
 
 .section {
-  padding: 4rem 2rem;
+  padding: 2rem;
   margin-top: 1rem;
+}
+
+.section__content {
+  margin: 0 auto;
+  max-width: 1140px;
 }
 
 .section__title {
   margin: 0;
-  border-bottom: 1px dotted;
-  padding-bottom: 0.5rem;
-  font-size: 1.17em;
+  font-size: 1em;
 }
 
 .hi {
   text-align: left;
   font-size: 1.5em;
-  margin-top: 2rem;
-  margin-bottom: 2rem;
 }
 
 .hi__title {
   /* color: var(--text-color); */
   font-weight: lighter;
   margin: 0;
-  font-size: 1.17em;
+  font-size: 1em;
 }
 
 .hi__title .link::after {
@@ -255,12 +227,21 @@ main {
   margin-bottom: 0;
 }
 
+.job__grid {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.job__experience-list {
+  padding: 0;
+  margin: 0;
+}
+
 .job .job__desc {
   margin: 0.5rem 0;
-  margin-top: 16px;
-  background-color: rgba(205, 202, 162, 0.16);
-  box-shadow: 0 10px 0 -5px #dedcb9;
-  padding: 8px;
+  /* background-color: rgba(205, 202, 162, 0.16); */
+  /* box-shadow: 0 10px 0 -5px #dedcb9; */
+  list-style: none;
 }
 
 .job .text--dark.job__desc {
@@ -278,14 +259,14 @@ main {
 }
 
 .job__title {
-  margin: 0.5rem 0;
-  font-size: 1.1em;
+  margin: 0;
+  margin-bottom: 0.5rem;
+  font-size: 1em;
 }
 
 .job__place {
   margin: 0;
   margin-bottom: 1.5rem;
-  font-size: 0.83em;
 }
 
 .job__place a {
@@ -297,7 +278,7 @@ main {
 }
 
 .project h3 {
-  font-size: 1.1em;
+  font-size: 1em;
   margin-bottom: 0rem;
 }
 
@@ -310,7 +291,7 @@ main {
   margin: 0.5rem 0 0.1rem 0;
 }
 
-.project nav > :nth-child(2) {
+.project nav> :nth-child(2) {
   margin: 0 0.5rem;
 }
 
@@ -551,6 +532,7 @@ footer {
 }
 
 @keyframes blob-one {
+
   0%,
   100% {
     transform: translatey(0);
@@ -562,6 +544,7 @@ footer {
 }
 
 @keyframes blob-two {
+
   0%,
   100% {
     transform: translatey(0);
@@ -573,6 +556,7 @@ footer {
 }
 
 @keyframes blob-three {
+
   0%,
   100% {
     transform: translatey(0);
@@ -584,6 +568,7 @@ footer {
 }
 
 @keyframes blob-four {
+
   0%,
   100% {
     transform: translatey(0);
@@ -595,6 +580,7 @@ footer {
 }
 
 @keyframes blob-five {
+
   0%,
   100% {
     transform: translatey(0);
@@ -606,6 +592,7 @@ footer {
 }
 
 @keyframes blob-six {
+
   0%,
   100% {
     transform: translatey(0);
@@ -617,6 +604,7 @@ footer {
 }
 
 @keyframes blob-seven {
+
   0%,
   100% {
     transform: translatey(0);
@@ -675,7 +663,7 @@ footer {
   }
 
   .footer__wrapper {
-    max-width: 40rem;
+    max-width: 1140px;
     margin: 0 auto;
     text-align: left;
   }

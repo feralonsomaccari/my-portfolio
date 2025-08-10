@@ -5,6 +5,7 @@
   --text-color: rgb(148, 148, 148);
   --link-color: inherit;
   --link-color-dark: rgb(148, 148, 148);
+  --main-blue: #2d8cf0;
 }
 
 * {
@@ -37,7 +38,6 @@ body {
 
 header {
   grid-area: header;
-  /* background: linear-gradient(#dd8c2e47, transparent); */
 }
 
 .header__wrapper {
@@ -58,6 +58,7 @@ header {
   z-index: 2;
 }
 
+.aboutme__image_container,
 .header__image-container {
   position: relative;
   width: 5rem;
@@ -65,6 +66,11 @@ header {
   flex-shrink: 0;
   border-radius: 50%;
   background-color: #f6ac57;
+}
+
+
+.aboutme__image_container {
+  margin-top: 2rem;
 }
 
 .header__image-picture {
@@ -98,27 +104,6 @@ header {
   background-color: var(--main-color);
 }
 
-.theme-toggle-btn {
-  background-color: rgb(220, 235, 255);
-  color: rgb(0, 50, 100);
-  width: auto;
-  height: auto;
-  border: 1px solid rgb(150, 180, 220);
-  border-radius: 4px;
-  padding: 4px 8px;
-  margin: 0px 0px 0px 8px;
-  align-self: start;
-  display: inline-block;
-  box-shadow: rgba(0, 50, 100, 0.2) 0px 2px 4px;
-  font-weight: 600;
-  transition:
-    background-color 0.3s,
-    color 0.3s;
-  outline: none;
-  cursor: pointer;
-  width: fit-content;
-}
-
 .main-nav {
   width: 100%;
   display: flex;
@@ -132,7 +117,7 @@ main {
 
 .text {
   opacity: 1;
-  line-height: 2em;
+  line-height: 1.5em;
 }
 
 .text--dark {
@@ -199,7 +184,7 @@ main {
 
 .hi__title {
   /* color: var(--text-color); */
-  font-weight: lighter;
+  font-weight: normal;
   margin: 0;
   font-size: 1em;
 }
@@ -228,9 +213,51 @@ main {
 }
 
 .job__grid {
+  position: relative;
   display: flex;
   gap: 1.5rem;
 }
+
+.job__grid::before {
+  content: '';
+  position: absolute;
+  left: 35px;
+  top: 70px;
+  bottom: 0;
+  border-left: solid 1px #f0e7e7;
+  z-index: 1;
+  height: 100%;
+}
+
+.section__content .job:last-child .job__grid::before {
+  content: '';
+  height: 73%;
+}
+
+.section--dark .section__content .job .job__grid::before {
+  border-left: solid 1px #353535;
+}
+
+.job__img {
+  position: relative;
+  z-index: 2;
+  width: 70px;
+  height: 70px;
+  /* border: solid 1px #f0e7e7; */
+  border-radius: 0.2rem;
+  /* box-shadow: 0 2px 0 0 #f0e7e7; */
+  background: white;
+  flex-shrink: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* .section--dark .job__img { */
+/*   border: solid 1px #f0e7e7; */
+/*   box-shadow: 0 2px 0 0 darkgrey; */
+/*   background: black; */
+/* } */
 
 .job__experience-list {
   padding: 0;
@@ -258,13 +285,20 @@ main {
   margin-top: 16px;
 }
 
+.job__period {
+  text-transform: uppercase;
+  font-size: 0.8rem;
+}
+
 .job__title {
   margin: 0;
   margin-bottom: 0.5rem;
   font-size: 1em;
+  opacity: 0.9;
 }
 
 .job__place {
+  font-weight: normal;
   margin: 0;
   margin-bottom: 1.5rem;
 }
@@ -404,6 +438,11 @@ footer {
   display: block;
 }
 
+.footer__wrapper hr {
+  opacity: 0.666;
+
+}
+
 .main-nav__footer .main-nav__link:not(:first-child) {
   margin-left: 1rem;
 }
@@ -417,7 +456,7 @@ footer {
 }
 
 .lamp {
-  display: none;
+  /* display: none; */
   position: absolute;
   top: 0;
   left: 0;
@@ -442,7 +481,7 @@ footer {
 
 .blob {
   border-radius: 50%;
-  background: #fff;
+  background: #f0e7e7;
   position: absolute;
 }
 
@@ -673,4 +712,60 @@ footer {
     text-align: left;
     width: fit-content;
   }
+}
+
+/*Switch*/
+.switch {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  width: 50px;
+  height: 20px;
+}
+
+.toggle {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  box-sizing: border-box;
+  border-radius: 5px;
+  border: 2px solid black;
+  box-shadow: 4px 4px black;
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: white;
+  transition: 0.3s;
+}
+
+.slider:before {
+  box-sizing: border-box;
+  position: absolute;
+  content: "";
+  height: 20px;
+  width: 20px;
+  border: 2px solid black;
+  border-radius: 5px;
+  left: -2px;
+  bottom: 2px;
+  background-color: white;
+  box-shadow: 0 3px 0 black;
+  transition: 0.3s;
+}
+
+.toggle:checked+.slider {
+  background-color: var(--main-blue);
+}
+
+.toggle:checked+.slider:before {
+  transform: translateX(30px);
 }

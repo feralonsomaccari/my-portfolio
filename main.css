@@ -481,9 +481,14 @@ footer {
 
 .blob {
   border-radius: 50%;
-  background: #f0e7e7;
+  background: #bcbcbc;
   position: absolute;
 }
+
+.lamp--dark .blob {
+  background: #f0e7e7;
+}
+
 
 .blob:nth-child(1) {
   width: 200px;

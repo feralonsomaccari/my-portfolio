@@ -7,7 +7,7 @@
   --link-color: inherit;
   --link-color-dark: rgb(148, 148, 148);
   --main-blue: #2d8cf0;
-  --main-special-color: #f6ac57;
+  --main-special-color: #debb7e;
   --blob-color: #bcbcbc;
   --blob-dark-color: #f0e7e7;
 }
@@ -719,12 +719,6 @@ footer {
     margin: 0 auto;
     text-align: left;
   }
-
-  .theme-toggle-btn {
-    margin-top: 0;
-    text-align: left;
-    width: fit-content;
-  }
 }
 
 /*Switch*/
@@ -741,9 +735,10 @@ footer {
 }
 
 .toggle {
-  opacity: 0;
-  width: 0;
-  height: 0;
+  opacity: 1;
+  width: 100%;
+  height: 100%;
+  outline-offset: 7px;
 }
 
 .slider {

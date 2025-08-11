@@ -398,6 +398,8 @@ main {
   transition: transform 0.1s ease-out;
   user-select: none;
   z-index: 2;
+  background: none;
+  border: none;
 }
 
 .emoji__high-five:hover {

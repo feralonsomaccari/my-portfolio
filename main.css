@@ -534,16 +534,6 @@ footer {
   bottom: -19%;
   left: 30%;
   animation:
-    wobble 7s ease-in-out alternate infinite,
-    blob-four ease-in-out 12s infinite;
-}
-
-.blob:nth-child(4) {
-  width: 235px;
-  height: 235px;
-  bottom: -19%;
-  left: 30%;
-  animation:
     wobble 8s ease-in-out alternate infinite,
     blob-four ease-in-out 12s infinite;
 }

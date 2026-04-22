@@ -491,6 +491,7 @@ footer {
   border-radius: 50%;
   background: var(--blob-color);
   position: absolute;
+  will-change: transform
 }
 
 .lamp--dark .blob {

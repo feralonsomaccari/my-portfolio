@@ -21,7 +21,7 @@ body {
   font-family: "HelveticaNeue", "Helvetica", "Arial", sans-serif;
   color: var(--text-color-dark);
   margin: 0;
-  transition: all 0.5s;
+  transition: background-color 0.5s, color 0.5s;
   scroll-behavior: smooth;
   background-color: var(--main-bg-color);
 }
@@ -456,7 +456,6 @@ footer {
 }
 
 .lamp {
-  position: block;
   top: 0;
   left: 0;
   width: 100%;
